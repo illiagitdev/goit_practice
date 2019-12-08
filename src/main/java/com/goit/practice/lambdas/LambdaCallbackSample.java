@@ -1,5 +1,7 @@
 package com.goit.practice.lambdas;
 
+import java.util.function.Consumer;
+
 public class LambdaCallbackSample {
     public static void main(String[] args) {
         // Попробуем рассмотреть другой пример на основе callback шаблона
@@ -29,7 +31,7 @@ public class LambdaCallbackSample {
         button.setOnClick((event) -> {
             String log = "on-" + event.getName();
             System.out.println(log);
-        } );
+        });
 
         button.click();
 
@@ -41,6 +43,13 @@ public class LambdaCallbackSample {
         // приведение лямбды к определенному типу функционального интерфейса
         // произойдет автоматически во время компиляции,
         // а тип этого интерфейса будет взять из контекста.
+
+        //А теперь попробуем использовать уже существующие функциональные интерфейсы для нашей реализации
+        //Создадим класс ButtonJava8, ознакомтесь с ним, он статический в этом же классе.
+        ButtonJava8 buttonJava8 = new ButtonJava8();
+        Consumer<ActionEvent> consumer = (event) -> System.out.println(event);
+        buttonJava8.setOnClick(consumer);
+        buttonJava8.click();
     }
 
     static class Button {
@@ -56,6 +65,23 @@ public class LambdaCallbackSample {
             if (onClick != null) {
                 onClick.handle(new ActionEvent("click"));
             }
+        }
+    }
+
+    //Consumer идеально подойдет для наших задач. Его метод accept заменит наш метод handle.
+    //Всегда ищите уже существующее решение, не нужно создавать свой функциональный интерфейс если
+    //в SDK уже есть дефолтные реализации!! Не создавайте велосипеды:)
+    static class ButtonJava8 {
+        private Consumer<ActionEvent> onCLick;
+
+        public void click() {
+            if (onCLick != null) {
+                onCLick.accept(new ActionEvent("click"));
+            }
+        }
+
+        public void setOnClick(Consumer<ActionEvent> consumer) {
+            this.onCLick = consumer;
         }
     }
 
