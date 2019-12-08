@@ -1,6 +1,6 @@
 package com.goit.practice.lambdas;
 
-public class LambdaSample {
+public class LambdaExtractSample {
     public static void main(String[] args) {
         //У нас есть сумма всех i реализована с помощью цикла
         testSum_i();
@@ -65,5 +65,10 @@ public class LambdaSample {
             result += function.get(i);
         }
         return result;
+    }
+
+    @FunctionalInterface
+    public interface MyFunction {
+        double get(double input);
     }
 }
