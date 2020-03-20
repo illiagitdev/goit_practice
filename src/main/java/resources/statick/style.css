@@ -1,0 +1,21 @@
+h1{
+    color: aquamarine;
+    font-size: 33px;
+}
+#h4id{
+    color: blue;
+    font-family: "Arial Narrow";
+}
+#pressBTN{
+    color: blueviolet;
+    font-weight: bold;
+}
+.h1class{
+    color: green;
+}
+#mId{
+    color: coral;
+}
+#dateGet{
+    color: chocolate;
+}

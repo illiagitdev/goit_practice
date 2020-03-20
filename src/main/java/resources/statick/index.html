@@ -1,0 +1,95 @@
+<!docetype HTML>
+<html>
+<head>
+    <title>Test_page</title>
+    <meta charset="utf-8" name="description" content="renew some knowledge on HTML!"/>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript">
+        function showDate() {
+            var date = new Date();
+            document.getElementById("printDate").innerHTML = "Day " + date.getDate() + " Month " + date.getMonth() +
+                                         " Year " + date.getUTCFullYear() + " miliseconds " + date.getMilliseconds();
+        }
+        function clearDate() {
+            document.getElementById("printDate").innerHTML = "";
+        }
+    </script>
+</head>
+<body>
+    <h1 class="h1class">h1 - header for test</h1>
+    <h1>h1 - header for test</h1>
+    <h2>h2 - header for test</h2>
+    <h3>h3 - header for test</h3>
+    <h4 id="h4id">h4 - header for test</h4>
+    <h5>h5 - header for test</h5>
+    <h6 style="color:brown;font-weight:revert;font-size:22px">h6 - header for test</h6>
+<!--    онклік метод в кнопках для роботи з js лістенером -->
+    <button id="dateGet" type="button" onclick="showDate()">Get date</button>
+    <button type="button" onclick="clearDate()">Clear date</button>
+    <p id="printDate" style="display: inline"></p>
+<!--    Створили таблицю-->
+    <table>
+        <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>email</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Illia</td>
+            <td>Bond</td>
+            <td>Illia.Bond@mail.com</td>
+        </tr>
+        <tr>
+            <td>Alex</td>
+            <td>Green</td>
+            <td>Alex.Green@mail.com</td>
+        </tr>
+        <tr>
+            <td>Andrey</td>
+            <td>McGreg</td>
+            <td>Andrey.McGreg@mail.com</td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    <input type="text"><!-- number || password -->
+    <button id="pressBTN" type="button">PRESS</button>
+
+    <!--    записами "М" в параграфі і в тегах <pre/>-->
+        <p>
+        -----           |-----
+        ||----|          ----||
+        ||-----         -----||
+        ||-----|       |-----||
+        || -----       ------||
+        ||- ----|     |------||
+        ||---||--     -------||
+        ||--|| --|   |-------||
+        || -|| |--   --- - --||
+        || -||  --|-|--| - ---|
+        |---||  |-----| |-----|
+        |---||   |----  |-----|
+        |----|    ---   |-----|
+        |-----          ------|
+    </p>
+    <pre id="mId">
+        -----           |-----
+        ||----|          ----||
+        ||-----         -----||
+        ||-----|       |-----||
+        || -----       ------||
+        ||- ----|     |------||
+        ||---||--     -------||
+        ||--|| --|   |-------||
+        || -|| |--   --- - --||
+        || -||  --|-|--| - ---|
+        |---||  |-----| |-----|
+        |---||   |----  |-----|
+        |----|    ---   |-----|
+        |-----          ------|
+    </pre>
+</body>
+</html>

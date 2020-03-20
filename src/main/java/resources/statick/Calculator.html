@@ -1,0 +1,68 @@
+<html>
+<head>
+    <title>Calculator</title>
+    <script type="text/javascript">
+        function calculate() {
+            document.getElementById("result").innerHTML = "";
+
+            let operation = document.getElementById("operation");
+            let selectedOperation = operation.options[operation.selectedIndex].value;
+            let firstOperand = document.getElementById("firstOperand").value;
+            let secondOperand = document.getElementById("secondOperand").value;
+            let result = "";
+
+            switch (selectedOperation) {
+                case "plus":
+                    result = parseInt(firstOperand) + parseInt(secondOperand);
+                    break;
+                case "minus":
+                    result = parseInt(firstOperand) - parseInt(secondOperand);
+                    break;
+                case "multiply":
+                    result = parseInt(firstOperand) * parseInt(secondOperand);
+                    break;
+                case "divide":
+                    result = parseInt(firstOperand) / parseInt(secondOperand);
+                    break;
+            }
+
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+</head>
+<body>
+    <h3>Calculator</h3>
+    <table>
+        <thead>
+        <tr>
+            <th>First argument</th>
+            <th>Operation</th>
+            <th>Second argument</th>
+            <th>Result</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>
+                <input id="firstOperand" type="number"/>
+            </td>
+            <td>
+                <select id="operation">
+                    <option value="plus" selected="selected">+</option>
+                    <option value="minus">-</option>
+                    <option value="multiply">*</option>
+                    <option value="divide">/</option>
+                </select>
+            </td>
+            <td>
+                <input id="secondOperand" type="number"/>
+            </td>
+            <td>
+                <p id="result"></p>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <button onclick="calculate()">calculate</button>
+</body>
+</html>
